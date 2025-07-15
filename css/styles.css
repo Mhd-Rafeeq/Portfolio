@@ -749,14 +749,76 @@ transform: translateY(-5px);
 box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
 }
 
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-.nav-links {
-    display: none;
+/* Hide menu toggle by default (will show on mobile) */
+.menu-toggle {
+  display: none;
 }
 
+/* Smooth transitions for mobile menu */
+.nav-links a {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  /* ===== Improved Navigation ===== */
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: rgba(10, 10, 10, 0.98);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    gap: 1.5rem;
+    clip-path: circle(0px at 90% -10%);
+    transition: clip-path 0.5s ease;
+    z-index: 999;
+    display: flex; /* Override your existing 'display: none' */
+  }
+  
+  .nav-links.active {
+    clip-path: circle(1000px at 90% -10%);
+  }
+
+  /* Hamburger menu icon (add this new rule) */
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  
+  .menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    transition: all 0.3s ease;
+  }
+  
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
 .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    line-height: 1.2;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
 }
 
 .hero .subtitle {
@@ -780,6 +842,11 @@ box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
 
 .projects-grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.project-card {
+    padding: 1.5rem;
 }
 
 .skills-grid {
@@ -788,6 +855,17 @@ box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
 
 .content-section {
     padding: 40px 20px;
+    margin: 30px 0;
+}
+.btn, .project-link, .skill-tag {
+    padding: 12px 24px;
+  }
+  
+  /* Disable hover effects on mobile */
+@media (hover: none) {
+    .btn:hover, .project-card:hover, .skill-category:hover {
+      transform: none !important;
+    }
 }
 }
 
