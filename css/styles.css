@@ -849,6 +849,72 @@ box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
 
   .contact-grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  /* Contact info section - improved mobile styling */
+  .contact-info {
+    padding: 2rem 1.5rem; /* Adjusted padding for mobile */
+    margin-bottom: 1rem;
+  }
+
+  .contact-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .contact-item {
+    margin-bottom: 1.5rem;
+    padding: 0.8rem;
+    justify-content: flex-start; /* Align items to start */
+    text-align: left;
+  }
+
+  .contact-item i {
+    width: 20px;
+    font-size: 1.1rem;
+    flex-shrink: 0; /* Prevent icon from shrinking */
+  }
+
+  .contact-item span {
+    font-size: 0.95rem;
+    word-break: break-word; /* Allow long text to wrap */
+    line-height: 1.4;
+  }
+
+  /* Contact form - improved mobile styling */
+  .contact-form {
+    padding: 2rem 1.5rem; /* Adjusted padding for mobile */
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group label {
+    font-size: 0.95rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 12px 15px; /* Slightly reduced padding for mobile */
+    font-size: 16px; /* Important: 16px prevents zoom on iOS */
+    border-radius: 8px;
+    min-height: auto; /* Reset min-height */
+  }
+
+  .form-group textarea {
+    min-height: 100px; /* Smaller textarea on mobile */
+    resize: vertical;
+  }
+
+  /* Form button styling for mobile */
+  .contact-form .btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+    margin-top: 1rem;
   }
 
   .cta-buttons {
@@ -878,11 +944,36 @@ box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
   .btn, .project-link, .skill-tag {
     padding: 12px 24px;
   }
+
+  .download-btn {
+    padding: 15px 30px;
+    font-size: 0.95rem;
+    width: auto;
+    display: inline-flex;
+    margin-top: 1.5rem;
+  }
   
   /* Disable hover effects on mobile */
   .btn:hover, .project-card:hover, .skill-category:hover {
     transform: none !important;
   }
+
+  footer {
+    padding: 2rem 0;
+    margin-top: 4rem;
+  }
+
+  .social-links {
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .social-links a {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+
 }
 
 /* Extra small devices (phones in portrait) */
@@ -905,6 +996,35 @@ box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
   
   .logo {
     font-size: 1.4rem; /* Smaller logo on very small screens */
+  }
+  
+  .content-section {
+    padding: 30px 15px;
+    margin: 20px 5px;
+  }
+
+  .contact-info,
+  .contact-form {
+    padding: 1.5rem 1rem;
+  }
+
+  .contact-item {
+    padding: 0.6rem;
+    gap: 1rem;
+  }
+
+  .contact-item span {
+    font-size: 0.9rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 10px 12px;
+  }
+
+  .download-btn {
+    padding: 12px 24px;
+    font-size: 0.9rem;
   }
 }
 
